@@ -97,11 +97,13 @@
   }
 
   .thumbnail-carousel {
-    animation: scroll-left 15s linear infinite;
+    animation: scroll-left 5s linear infinite;
+    will-change: transform;
   }
 
   .thumbnail-carousel-reverse {
-    animation: scroll-right 15s linear infinite;
+    animation: scroll-right 5s linear infinite;
+    will-change: transform;
   }
 }
 
