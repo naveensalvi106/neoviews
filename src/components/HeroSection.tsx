@@ -1,5 +1,10 @@
 import { ArrowRight, ArrowDown } from "lucide-react";
-import heroChar from "@/assets/hero-character.png";
+import heroThumb1 from "@/assets/hero-thumb-1.jpg";
+import heroThumb2 from "@/assets/hero-thumb-2.jpg";
+import heroThumb3 from "@/assets/hero-thumb-3.jpg";
+import heroThumb4 from "@/assets/hero-thumb-4.jpg";
+import heroThumb5 from "@/assets/hero-thumb-5.jpg";
+import heroThumb6 from "@/assets/hero-thumb-6.jpg";
 import thumb1 from "@/assets/thumb-1.png";
 import thumb2 from "@/assets/thumb-2.png";
 import thumb3 from "@/assets/thumb-3.png";
@@ -8,10 +13,10 @@ import thumb5 from "@/assets/thumb-5.png";
 import thumb6 from "@/assets/thumb-6.png";
 import thumb7 from "@/assets/thumb-7.png";
 import thumb8 from "@/assets/thumb-8.png";
+import thumb9 from "@/assets/thumb-9.png";
+import thumb10 from "@/assets/thumb-10.png";
 import thumb11 from "@/assets/thumb-11.png";
 import thumb12 from "@/assets/thumb-12.png";
-import thumb13 from "@/assets/thumb-13.png";
-import thumb14 from "@/assets/thumb-14.png";
 
 const trustedBy = [
   { name: "Eternal Passenger", subs: "703K Subscribers" },
@@ -25,8 +30,9 @@ const trustedBy = [
   { name: "Make Money Matt", subs: "875K Subscribers" },
 ];
 
-const topRow = [thumb1, thumb2, thumb3, thumb4, thumb5, thumb6, thumb7, thumb8];
-const bottomRow = [thumb11, thumb12, thumb13, thumb14, thumb1, thumb2, thumb3, thumb4];
+const row1 = [heroThumb1, heroThumb2, heroThumb3, heroThumb4, heroThumb5, heroThumb6];
+const row2 = [thumb1, thumb2, thumb3, thumb4, thumb5, thumb6];
+const row3 = [thumb7, thumb8, thumb9, thumb10, thumb11, thumb12];
 
 const HeroSection = () => {
   return (
@@ -82,18 +88,30 @@ const HeroSection = () => {
         </div>
       </div>
 
-      {/* Thumbnail Carousel */}
+      {/* Thumbnail Carousel - 3 Rows */}
       <div className="mt-8 relative">
-        <div className="overflow-hidden rounded-3xl mx-4 md:mx-12 lg:mx-20 bg-card/50 backdrop-blur-sm border border-border p-4 md:p-6">
+        <div className="overflow-hidden rounded-3xl mx-4 md:mx-12 lg:mx-20 bg-card/50 backdrop-blur-sm border border-border p-4 md:p-6 space-y-4">
+          {/* Row 1: Left to Right */}
           <div className="overflow-hidden">
             <div className="flex gap-4 thumbnail-carousel">
-              {[...topRow, ...topRow].map((thumb, i) => (
-                <img
-                  key={i}
-                  src={thumb}
-                  alt="YouTube thumbnail"
-                  className="h-36 md:h-44 rounded-xl object-cover shrink-0"
-                />
+              {[...row1, ...row1].map((thumb, i) => (
+                <img key={i} src={thumb} alt="YouTube thumbnail" className="h-32 md:h-40 rounded-xl object-cover shrink-0 aspect-video" />
+              ))}
+            </div>
+          </div>
+          {/* Row 2: Right to Left */}
+          <div className="overflow-hidden">
+            <div className="flex gap-4 thumbnail-carousel-reverse">
+              {[...row2, ...row2].map((thumb, i) => (
+                <img key={i} src={thumb} alt="YouTube thumbnail" className="h-32 md:h-40 rounded-xl object-cover shrink-0 aspect-video" />
+              ))}
+            </div>
+          </div>
+          {/* Row 3: Left to Right */}
+          <div className="overflow-hidden">
+            <div className="flex gap-4 thumbnail-carousel">
+              {[...row3, ...row3].map((thumb, i) => (
+                <img key={i} src={thumb} alt="YouTube thumbnail" className="h-32 md:h-40 rounded-xl object-cover shrink-0 aspect-video" />
               ))}
             </div>
           </div>
