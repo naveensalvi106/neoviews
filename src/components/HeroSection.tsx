@@ -5,12 +5,12 @@ import heroThumb3 from "@/assets/hero-thumb-3.jpg";
 import heroThumb4 from "@/assets/hero-thumb-4.jpg";
 import heroThumb5 from "@/assets/hero-thumb-5.jpg";
 import heroThumb6 from "@/assets/hero-thumb-6.jpg";
-import thumb1 from "@/assets/thumb-1.png";
-import thumb2 from "@/assets/thumb-2.png";
-import thumb3 from "@/assets/thumb-3.png";
-import thumb4 from "@/assets/thumb-4.png";
-import thumb5 from "@/assets/thumb-5.png";
-import thumb6 from "@/assets/thumb-6.png";
+import row2Thumb1 from "@/assets/row2-thumb-1.avif";
+import row2Thumb2 from "@/assets/row2-thumb-2.avif";
+import row2Thumb3 from "@/assets/row2-thumb-3.avif";
+import row2Thumb4 from "@/assets/row2-thumb-4.avif";
+import row2Thumb5 from "@/assets/row2-thumb-5.avif";
+import row2Thumb6 from "@/assets/row2-thumb-6.avif";
 import thumb7 from "@/assets/thumb-7.png";
 import thumb8 from "@/assets/thumb-8.png";
 import thumb9 from "@/assets/thumb-9.png";
@@ -31,7 +31,7 @@ const trustedBy = [
 ];
 
 const row1 = [heroThumb1, heroThumb2, heroThumb3, heroThumb4, heroThumb5, heroThumb6];
-const row2 = [thumb1, thumb2, thumb3, thumb4, thumb5, thumb6];
+const row2 = [row2Thumb1, row2Thumb2, row2Thumb3, row2Thumb4, row2Thumb5, row2Thumb6];
 const row3 = [thumb7, thumb8, thumb9, thumb10, thumb11, thumb12];
 
 const HeroSection = () => {
