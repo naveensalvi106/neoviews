@@ -11,12 +11,13 @@ import row2Thumb3 from "@/assets/row2-thumb-3.avif";
 import row2Thumb4 from "@/assets/row2-thumb-4.avif";
 import row2Thumb5 from "@/assets/row2-thumb-5.avif";
 import row2Thumb6 from "@/assets/row2-thumb-6.avif";
-import thumb7 from "@/assets/thumb-7.png";
-import thumb8 from "@/assets/thumb-8.png";
-import thumb9 from "@/assets/thumb-9.png";
-import thumb10 from "@/assets/thumb-10.png";
-import thumb11 from "@/assets/thumb-11.png";
-import thumb12 from "@/assets/thumb-12.png";
+import row3Thumb1 from "@/assets/row3-thumb-1.avif";
+import row3Thumb2 from "@/assets/row3-thumb-2.avif";
+import row3Thumb3 from "@/assets/row3-thumb-3.avif";
+import row3Thumb4 from "@/assets/row3-thumb-4.avif";
+import row3Thumb5 from "@/assets/row3-thumb-5.avif";
+import row3Thumb6 from "@/assets/row3-thumb-6.avif";
+import row3Thumb7 from "@/assets/row3-thumb-7.avif";
 
 const trustedBy = [
   { name: "Eternal Passenger", subs: "703K Subscribers" },
@@ -32,7 +33,26 @@ const trustedBy = [
 
 const row1 = [heroThumb1, heroThumb2, heroThumb3, heroThumb4, heroThumb5, heroThumb6];
 const row2 = [row2Thumb1, row2Thumb2, row2Thumb3, row2Thumb4, row2Thumb5, row2Thumb6];
-const row3 = [thumb7, thumb8, thumb9, thumb10, thumb11, thumb12];
+const row3 = [row3Thumb1, row3Thumb2, row3Thumb3, row3Thumb4, row3Thumb5, row3Thumb6, row3Thumb7];
+
+const ThumbImg = ({ src }: { src: string }) => (
+  <img src={src} alt="YouTube thumbnail" className="h-32 md:h-40 rounded-xl object-cover shrink-0 aspect-video" />
+);
+
+const InfiniteRow = ({ images, direction = "left", duration = 20 }: { images: string[]; direction?: "left" | "right"; duration?: number }) => {
+  const animName = direction === "left" ? "scroll-left" : "scroll-right";
+  return (
+    <div className="overflow-hidden">
+      <div
+        className="flex gap-4 w-max"
+        style={{ animation: `${animName} ${duration}s linear infinite` }}
+      >
+        {images.map((thumb, i) => <ThumbImg key={`a-${i}`} src={thumb} />)}
+        {images.map((thumb, i) => <ThumbImg key={`b-${i}`} src={thumb} />)}
+      </div>
+    </div>
+  );
+};
 
 const HeroSection = () => {
   return (
@@ -91,30 +111,9 @@ const HeroSection = () => {
       {/* Thumbnail Carousel - 3 Rows */}
       <div className="mt-8 relative">
         <div className="overflow-hidden rounded-3xl mx-4 md:mx-12 lg:mx-20 bg-card/50 backdrop-blur-sm border border-border p-4 md:p-6 space-y-4">
-          {/* Row 1: Left to Right */}
-          <div className="overflow-hidden">
-            <div className="flex gap-4 thumbnail-carousel">
-              {[...row1, ...row1, ...row1, ...row1].map((thumb, i) => (
-                <img key={i} src={thumb} alt="YouTube thumbnail" className="h-32 md:h-40 rounded-xl object-cover shrink-0 aspect-video" />
-              ))}
-            </div>
-          </div>
-          {/* Row 2: Right to Left */}
-          <div className="overflow-hidden">
-            <div className="flex gap-4 thumbnail-carousel-reverse">
-              {[...row2, ...row2, ...row2, ...row2].map((thumb, i) => (
-                <img key={i} src={thumb} alt="YouTube thumbnail" className="h-32 md:h-40 rounded-xl object-cover shrink-0 aspect-video" />
-              ))}
-            </div>
-          </div>
-          {/* Row 3: Left to Right */}
-          <div className="overflow-hidden">
-            <div className="flex gap-4 thumbnail-carousel">
-              {[...row3, ...row3, ...row3, ...row3].map((thumb, i) => (
-                <img key={i} src={thumb} alt="YouTube thumbnail" className="h-32 md:h-40 rounded-xl object-cover shrink-0 aspect-video" />
-              ))}
-            </div>
-          </div>
+          <InfiniteRow images={row1} direction="left" duration={20} />
+          <InfiniteRow images={row2} direction="right" duration={20} />
+          <InfiniteRow images={row3} direction="left" duration={20} />
         </div>
       </div>
     </section>
