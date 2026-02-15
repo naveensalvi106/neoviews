@@ -32,6 +32,9 @@ const HeroSection = () => {
   return (
     <section className="hero-gradient pt-32 pb-0 overflow-hidden">
       <div className="max-w-4xl mx-auto text-center px-4">
+        <p className="text-sm md:text-base text-muted-foreground italic mb-4">
+          if they never click, they'll never watch it
+        </p>
         <h1 className="text-4xl md:text-6xl lg:text-[4rem] font-extrabold leading-[1.1] tracking-tight text-foreground">
           Get Unlimited YouTube Thumbnails
           <br />
