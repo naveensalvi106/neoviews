@@ -94,7 +94,7 @@ const HeroSection = () => {
           {/* Row 1: Left to Right */}
           <div className="overflow-hidden">
             <div className="flex gap-4 thumbnail-carousel">
-              {[...row1, ...row1].map((thumb, i) => (
+              {[...row1, ...row1, ...row1, ...row1].map((thumb, i) => (
                 <img key={i} src={thumb} alt="YouTube thumbnail" className="h-32 md:h-40 rounded-xl object-cover shrink-0 aspect-video" />
               ))}
             </div>
@@ -102,7 +102,7 @@ const HeroSection = () => {
           {/* Row 2: Right to Left */}
           <div className="overflow-hidden">
             <div className="flex gap-4 thumbnail-carousel-reverse">
-              {[...row2, ...row2].map((thumb, i) => (
+              {[...row2, ...row2, ...row2, ...row2].map((thumb, i) => (
                 <img key={i} src={thumb} alt="YouTube thumbnail" className="h-32 md:h-40 rounded-xl object-cover shrink-0 aspect-video" />
               ))}
             </div>
@@ -110,7 +110,7 @@ const HeroSection = () => {
           {/* Row 3: Left to Right */}
           <div className="overflow-hidden">
             <div className="flex gap-4 thumbnail-carousel">
-              {[...row3, ...row3].map((thumb, i) => (
+              {[...row3, ...row3, ...row3, ...row3].map((thumb, i) => (
                 <img key={i} src={thumb} alt="YouTube thumbnail" className="h-32 md:h-40 rounded-xl object-cover shrink-0 aspect-video" />
               ))}
             </div>
